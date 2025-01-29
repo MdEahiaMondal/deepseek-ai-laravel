@@ -26,7 +26,6 @@ After publishing the configuration, add your DeepSeek API key to your `.env` fil
 
 ```env
 DEEPSEEK_API_KEY=your-api-key,
-DEEPSEEK_BASE_URL=https://api.deepseek.com/chat/completions
 ```
 
 ## Usage
