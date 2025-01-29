@@ -27,7 +27,7 @@ class DeepSeekAIClient
     public function chat(array $messages, $model = 'deepseek-chat')
     {
         try {
-            $response = $this->client->post('chat', [
+            $response = $this->client->post('chat/completions', [
                 'json' => [
                     "model" => $model,
                     'messages' => $messages,
