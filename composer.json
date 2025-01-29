@@ -1,0 +1,32 @@
+{
+    "name": "eahiya/deepseek-ai-laravel",
+    "description": "A Laravel package for integrating with the DeepSeek API.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "eahiya\\DeepSeekAI\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/support": "^9.0|^10.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "eahiya\\DeepSeekAI\\DeepSeekAIServiceProvider"
+            ],
+            "aliases": {
+                "DeepSeekAI": "eahiya\\DeepSeekAI\\Facades\\DeepSeekAI"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "Eahiya",
+            "email": "55204970+MdEahiaMondal@users.noreply.github.com"
+        }
+    ]
+}
