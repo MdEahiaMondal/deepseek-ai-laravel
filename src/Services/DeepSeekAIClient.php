@@ -1,4 +1,5 @@
 <?php
+
 namespace eahiya\DeepSeekAI\Services;
 
 use GuzzleHttp\Client;
@@ -23,15 +24,15 @@ class DeepSeekAIClient
         ]);
     }
 
-    public function chat(array $messages)
+    public function chat(array $messages, $model = 'deepseek-chat')
     {
         try {
             $response = $this->client->post('chat', [
                 'json' => [
+                    "model" => $model,
                     'messages' => $messages,
                 ],
             ]);
-
             return json_decode($response->getBody(), true);
         } catch (GuzzleException $e) {
             throw new \Exception('API request failed: ' . $e->getMessage());

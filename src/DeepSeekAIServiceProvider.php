@@ -9,7 +9,7 @@ class DeepSeekAIServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/config/deepseek.php', 'deepseek');
+        $this->mergeConfigFrom(__DIR__ . '/config/deepseek.php', 'deepseek');
 
         $this->app->singleton('deepseek', function ($app) {
             return new DeepSeekAIClient(
@@ -21,10 +21,14 @@ class DeepSeekAIServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__.'/config/deepseek.php' => config_path('deepseek.php'),
-            ], 'deepseek-config');
-        }
+//        if ($this->app->runningInConsole()) {
+//            $this->publishes([
+//                __DIR__.'/config/deepseek.php' => config_path('deepseek.php'),
+//            ], 'deepseek-config');
+//        }
+
+        $this->publishes([
+            __DIR__ . '/config/deepseek.php' => config_path('deepseek.php'),
+        ], 'deepseek-config');
     }
 }
